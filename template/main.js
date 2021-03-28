@@ -53,9 +53,6 @@ require([
   'pathToRegexp',
   'list',
 ], function ($, _, locale, Handlebars, apiProject, apiData, prettyPrint, sampleRequest, semver, WebFont) {
-  // load google web fonts
-  loadGoogleFontCss()
-
   var api = apiData.api
 
   //
@@ -851,21 +848,6 @@ require([
 
     $root.remove()
     return
-  }
-
-  /**
-   * Load google fonts.
-   */
-  function loadGoogleFontCss() {
-    WebFont.load({
-      active: function () {
-        // Update scrollspy
-        $(window).scrollspy('refresh')
-      },
-      google: {
-        families: ['Source Code Pro', 'Mukta:n4,n6,n7'],
-      },
-    })
   }
 
   /**
