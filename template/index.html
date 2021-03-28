@@ -50,7 +50,7 @@
     </script>
 
     <script id="template-project" type="text/x-handlebars-template">
-      <div class='pull-left'>
+      <header class='pull-left'>
         <div class='pull-left'>
           <img draggable='false' class='logo' src='img/logo.svg' />
         </div>
@@ -64,16 +64,16 @@
             </h2>
           {{/if}}
           {{#if details}}
-            <article>
+            <section>
               {{#each details}}
                 <p>
                   {{this}}
                 </p>
               {{/each}}
-            </article>
+            </section>
           {{/if}}
         </div>
-      </div>
+      </header>
       {{#if template.withCompare}}
         <div class='pull-right'>
           <div class='btn-group'>

@@ -301,7 +301,26 @@ pre code.sample-request-response-json {
 
 img.logo {
   height: 76px;
-  margin-right: 16px;
+  margin-right: 24px;
+}
+
+#project header .pull-right {
+  max-width: 900px;
+}
+
+#project header p {
+  display: block;
+  color: #292b36;
+}
+
+#project header p:first-of-type {
+  margin-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 8px;
+}
+
+#project header p:last-of-type {
+  margin-bottom: 0;
 }
 
 .form-group {
