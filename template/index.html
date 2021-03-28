@@ -26,48 +26,53 @@
           <span class="search-reset">x</span>
         </div>
         <ul class="sidenav nav nav-list list">
-        {{#each nav}}
-          {{#if title}}
-            {{#if isHeader}}
-              {{#if isFixed}}
-                <li class="nav-fixed nav-header navbar-btn nav-list-item" data-group="{{group}}"><a href="#api-{{group}}" data-name="show-api-{{group}}" class="show-api api-{{group}}-init">{{underscoreToSpace title}}</a></li>
+          {{#each nav}}
+            {{#if title}}
+              {{#if isHeader}}
+                {{#if isFixed}}
+                  <li class="nav-fixed nav-header navbar-btn nav-list-item" data-group="{{group}}"><a href="#api-{{group}}" data-name="show-api-{{group}}" class="show-api api-{{group}}-init">{{underscoreToSpace title}}</a></li>
+                {{else}}
+                  <li class="nav-header nav-list-item" data-group="{{group}}"><a href="#api-{{group}}" data-group="show-api-{{group}}" class="show-group api-{{group}}-init">{{underscoreToSpace title}}</a></li>
+                {{/if}}
               {{else}}
-                <li class="nav-header nav-list-item" data-group="{{group}}"><a href="#api-{{group}}" data-group="show-api-{{group}}" class="show-group api-{{group}}-init">{{underscoreToSpace title}}</a></li>
+                <li class="{{#if hidden}}hide {{/if}}" data-group="{{group}}" data-name="{{name}}" data-version="{{version}}">
+                  <a href="#api-{{group}}-{{name}}" title="{{url}}" data-group="show-api-{{group}}" data-name="show-api-{{group}}-{{name}}" class="nav-list-item show-api api-{{group}}-{{name}}-init">
+                    <span class="navtype navtype__{{toLowerCase type}}">{{toLowerCase type}}</span>
+                    {{title}}
+                    <div class="nav-list-url-item hide">{{url}}</div>
+                  </a>
+                </li>
               {{/if}}
-            {{else}}
-              <li class="{{#if hidden}}hide {{/if}}" data-group="{{group}}" data-name="{{name}}" data-version="{{version}}">
-                <a href="#api-{{group}}-{{name}}" title="{{url}}" data-group="show-api-{{group}}" data-name="show-api-{{group}}-{{name}}" class="nav-list-item show-api api-{{group}}-{{name}}-init">
-                  <span class="navtype navtype__{{toLowerCase type}}">{{toLowerCase type}}</span>
-                  {{title}}
-                  <div class="nav-list-url-item hide">{{url}}</div>
-                </a>
-              </li>
             {{/if}}
-          {{/if}}
-        {{/each}}
+          {{/each}}
         </ul>
       </nav>
     </script>
 
     <script id="template-project" type="text/x-handlebars-template">
       <div class='pull-left'>
-        <h1>
-          {{name}}
-        </h1>
-        {{#if description}}
-          <h2>
-            {{{nl2br description}}}
-          </h2>
-        {{/if}}
-        {{#if details}}
-          <article>
-            {{#each details}}
-              <p>
-                {{this}}
-              </p>
-            {{/each}}
-          </article>
-        {{/if}}
+        <div class='pull-left'>
+          <img class='logo' src='img/logo.svg' />
+        </div>
+        <div class='pull-right'>
+          <h1>
+            {{name}}
+          </h1>
+          {{#if description}}
+            <h2>
+              {{{nl2br description}}}
+            </h2>
+          {{/if}}
+          {{#if details}}
+            <article>
+              {{#each details}}
+                <p>
+                  {{this}}
+                </p>
+              {{/each}}
+            </article>
+          {{/if}}
+        </div>
       </div>
       {{#if template.withCompare}}
         <div class='pull-right'>

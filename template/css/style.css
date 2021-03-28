@@ -299,6 +299,11 @@ pre code.sample-request-response-json {
   border-bottom: 1px solid #ebebeb;
 }
 
+img.logo {
+  height: 76px;
+  margin-right: 16px;
+}
+
 .form-group {
   margin: 0 !important;
 }
@@ -343,6 +348,7 @@ pre code.sample-request-response-json {
 /* ------------------------------------------------------------------------------------------
  * Sidenav
  * ------------------------------------------------------------------------------------------ */
+
 .sidenav {
   width: 235px;
   margin: 0;
